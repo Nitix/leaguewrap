@@ -38,4 +38,19 @@ class SummonerSpellList extends AbstractListDto {
 
 		return null;
 	}
+
+    /**
+     * Get the the spell from the name
+     * @param string $name
+     *
+     * @return SummonerSpell|null
+     */
+	public function getSpellFromName($name)
+	{
+		foreach($this->info['data'] as $id => $spell){
+            if($spell['name'] == $name)
+                return $this->info['data'][$id];
+		}
+        return null;
+	}
 }
