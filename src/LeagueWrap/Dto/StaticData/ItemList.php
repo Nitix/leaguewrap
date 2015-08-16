@@ -53,10 +53,10 @@ class ItemList extends AbstractListDto {
 	}
 
 	/**
-	 * Quick shortcut to get a champions information by $itemId
+	 * Quick shortcut to get an item information by $itemId
 	 *
 	 * @param int $itemId
-	 * @return Champion|null
+	 * @return Item|null
 	 */
 	public function getItem($itemId)
 	{
