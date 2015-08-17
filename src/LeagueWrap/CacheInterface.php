@@ -7,12 +7,13 @@ interface CacheInterface {
 	 * Adds the response string into the cache under the given key for
 	 * $seconds.
 	 *
+	 * @param object $response
 	 * @param string $key
-	 * @param string $response
 	 * @param int $seconds
-	 * @return bool
+	 *
+	 *@return bool
 	 */
-	public function set($key, $response, $seconds);
+	public function set($response, $key, $seconds);
 
 	/**
 	 * Determines if the cache has the given key.
