@@ -1,15 +1,20 @@
 <?php
 namespace LeagueWrap\Api;
 
+use LeagueWrap\Dto\Rune;
 use LeagueWrap\Dto\StaticData\Champion as staticChampion;
 use LeagueWrap\Dto\StaticData\ChampionList;
 use LeagueWrap\Dto\StaticData\Item as staticItem;
+use LeagueWrap\Dto\StaticData\Item;
 use LeagueWrap\Dto\StaticData\ItemList;
 use LeagueWrap\Dto\StaticData\Mastery as staticMastery;
+use LeagueWrap\Dto\StaticData\Mastery;
 use LeagueWrap\Dto\StaticData\MasteryList;
+use LeagueWrap\Dto\StaticData\Realm;
 use LeagueWrap\Dto\StaticData\Rune as staticRune;
 use LeagueWrap\Dto\StaticData\RuneList;
 use LeagueWrap\Dto\StaticData\SummonerSpell as staticSummonerSpell;
+use LeagueWrap\Dto\StaticData\SummonerSpell;
 use LeagueWrap\Dto\StaticData\SummonerSpellList;
 use LeagueWrap\Dto\StaticData\Realm as staticRealm;
 
@@ -77,6 +82,7 @@ class Staticdata extends AbstractApi {
 	 *
 	 * @param string $locale
 	 * @chainable
+	 * @return StaticData this object (chain)
 	 */
 	public function setLocale($locale)
 	{
@@ -91,6 +97,7 @@ class Staticdata extends AbstractApi {
 	 *
 	 * @param string $DDversion
 	 * @chainable
+	 * @return StaticData this object (chain)
 	 */
 	public function setDDversion($DDversion = null)
 	{
@@ -102,8 +109,8 @@ class Staticdata extends AbstractApi {
 	/**
 	 * Gets all static champion data with the given $data option.
 	 *
-	 * @param mixed #data
-	 * @retrn ChampionList
+	 * @param mixed $data
+	 * @return ChampionList
 	 */
 	public function getChampions($data = null)
 	{
