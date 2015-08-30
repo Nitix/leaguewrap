@@ -67,4 +67,21 @@ class ItemList extends AbstractListDto {
 
 		return null;
 	}
+
+    /**
+     * Sort the itemList by Gold and if they have the same gold amount, then sort by Name
+     */
+	public function sortByGoldAndName()
+    {
+        usort($this->info['data'], function($a, $b){
+            if ($a->get('gold')->get('total') == $b->get('gold')->get('total')) {
+                if($a->get('name') == $b->get('name')){
+                    return 0;
+                }else{
+                    return ($a->get('name') < $b->get('name')) ? -1 : 1;
+                }
+            }
+            return ($a->get('gold') < $b->get('gold')) ? -1 : 1;
+        });
+    }
 }
