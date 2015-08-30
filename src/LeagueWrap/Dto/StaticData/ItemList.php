@@ -81,7 +81,7 @@ class ItemList extends AbstractListDto {
                     return ($a->get('name') < $b->get('name')) ? -1 : 1;
                 }
             }
-            return ($a->get('gold') < $b->get('gold')) ? -1 : 1;
+            return ($a->get('gold')->get('total') < $b->get('gold')->get('total')) ? -1 : 1;
         });
     }
 }
