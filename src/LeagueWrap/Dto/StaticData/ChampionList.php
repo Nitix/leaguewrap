@@ -43,4 +43,17 @@ class ChampionList extends AbstractListDto {
 
 		return null;
 	}
+
+	/**
+	 * Sort the ChampionList by Name
+	 */
+	public function sortByName()
+	{
+		usort($this->info['data'], function($a, $b){
+			if ($a->get('name') == $b->get('name')) {
+				return 0;
+			}
+			return ($a->get('name') < $b->get('name')) ? -1 : 1;
+		});
+	}
 }
